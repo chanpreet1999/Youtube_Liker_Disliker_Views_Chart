@@ -21,7 +21,7 @@ let idx = 0;
         let tab = numberOfPages[0];                 //select the 1st one
 
         await tab.goto(`${link}/videos`, { waitUntil: "networkidle0" , timeout : 45 * 1000});
-
+        
         const vidList = await tab.$$('#contents .style-scope.ytd-section-list-renderer a#video-title');
         for (let ele of vidList) {
             let curHref = await tab.evaluate(el => el.getAttribute("href"), ele);
@@ -34,8 +34,8 @@ let idx = 0;
             await limitTabs( browser, idx, idx + 10 );
             idx += 10;
         }
+        allData.sort((a, b) => (a.order > b.order) ? 1 : -1)
         console.table(allData);
-        
                
     } catch (err) {
         console.log(err);
