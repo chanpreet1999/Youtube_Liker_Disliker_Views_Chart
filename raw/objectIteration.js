@@ -2,16 +2,19 @@ let arrObj = [ {
     likes : 213,
     dislikes : 321, 
     views : 100,
+    title : 'vid1',
     order : 0
 }, {
     likes : 88713,
     dislikes : 321, 
     views : 200,
+    title : 'vid2',
     order : 1 
 }, {
     likes : 72213,
     dislikes : 321, 
     views : 300,
+    title : 'vid3',
     order : 2
 } ];
 
